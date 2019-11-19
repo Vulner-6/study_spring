@@ -10,12 +10,13 @@
     <!--打包方式选择jar包-->
     <packaging>jar</packaging>
     <!--添加依赖-->
+    <!--
     <dependencies>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.47</version>
+            <groupId>org.srpingframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.0.2.RELEASE</version>
         </dependency>
     </dependencies>
-
+-->
 </project>

@@ -15,7 +15,7 @@ import java.util.Properties;
  *         配置的内容：唯一标识=>全限定类名
  *     2.读取配置文件信息，利用反射来创建对象
  */
-public class BeanFactory
+public class BeanFactory1
 {
     //定义一个Properties对象
     private static Properties props;
@@ -27,7 +27,7 @@ public class BeanFactory
             //实例化对象
             props=new Properties();
             //获取properties文件的流对象,下面的方式最好。因为web一旦部署，可能就没有src那一层目录了。
-            InputStream in=BeanFactory.class.getClassLoader().getResourceAsStream("bean.properties");
+            InputStream in= BeanFactory1.class.getClassLoader().getResourceAsStream("bean.properties");
             props.load(in);
         }
         catch (Exception e)
