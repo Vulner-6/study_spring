@@ -14,6 +14,6 @@
 
     <!--第三种使用工厂类中的静态方法产生对象时，spring的bean标签的写法是直接调用该方法-->
     <bean id="staticFactory" class="com.study_spring.factory.StaticFactory"
-          factory-method="getAccountServiceImp1"></bean>
+          factory-method="getAccountServiceImp1" scope="prototype" init-method="init" destroy-method="destory"></bean>
 
 </beans>
