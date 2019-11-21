@@ -16,4 +16,27 @@
     <bean id="staticFactory" class="com.study_spring.factory.StaticFactory"
           factory-method="getAccountServiceImp1" scope="prototype" init-method="init" destroy-method="destory"></bean>
 
+    <!--依赖注入的测试与使用-->
+    <!--1.以构造函数的方式进行注入：
+            使用的标签：constructor-arg
+            标签出现的位置：bean标签的内部
+            标签中的属性：
+                type:用于要指定的数据的数据类型，该数据是构造函数形参中的参数的类型（只要形参中有这个类型，就起作用）
+                index:根据构造函数中形参的位置决定给哪个形参注入。(从0开始)
+                name:指定构造函数中形参的名称进行注入
+                ===========================================================
+                value:只能赋值给基本数据类型
+                ref:用于指定其他的bean类型数据，它指的就是spring ioc核心容器中出现过的bean对象
+            优势：
+                适用于只有带参构造函数，没有默认函数的情况
+            劣势：
+                改变了bean对象的实例化方式，使我们在创建对象的时候，即使用不到，也需要提供参数（一般开发中都不用这种方法。操。）
+    -->
+    <bean id="AccountServiceImp2" class="com.study_spring.service.AccountServiceImp2">
+        <constructor-arg name="name" value="牛逼闪闪放光彩"></constructor-arg>
+        <constructor-arg name="age" value="18"></constructor-arg>
+        <constructor-arg name="birthday" ref="now"></constructor-arg>
+    </bean>
+    <bean id="now" class="java.util.Date"></bean>
+
 </beans>
