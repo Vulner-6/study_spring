@@ -39,4 +39,36 @@
     </bean>
     <bean id="now" class="java.util.Date"></bean>
 
+    <!--使用set注入-->
+    <bean id="AccountServiceImp3" class="com.study_spring.service.AccountServiceImp3">
+        <property name="name" value="王二狗"></property>
+        <property name="age" value="21"></property>
+        <property name="birthday" ref="now"></property>
+    </bean>
+
+    <!--复杂类型的注入/集合类型的注入-->
+    <bean id="ArraySetInjection" class="com.study_spring.service.ArraySetInjection">
+        <property name="list">
+            <list>
+                <value>123</value>
+                <value>456</value>
+            </list>
+
+        </property>
+
+        <property name="set">
+            <list>
+                <value>789</value>
+                <value>987</value>
+            </list>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry key="test1" value="666"></entry>
+                <entry key="test2" value="888"></entry>
+            </map>
+        </property>
+    </bean>
+
 </beans>
